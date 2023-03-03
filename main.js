@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, BrowserView} = require('electron')
 const path = require('path')
 
 function createWindow () {
@@ -13,8 +13,11 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
-
+  //mainWindow.loadFile('index.html')
+  const view = new BrowserView()
+  mainWindow.setBrowserView(view)
+  view.setBounds({x: 0, y: 0, width: 800, height:600 })
+  view.webContents.loadURL('https://electronjs.org')
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
