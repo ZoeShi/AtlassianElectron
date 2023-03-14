@@ -11,10 +11,23 @@ function createWindow () {
       preload: path.join(__dirname, 'preload.js')
     }
   })
+  // We set an intercept on incoming requests to disable x-frame-options
+  // headers.
+  mainWindow.webContents.session.webRequest.onHeadersReceived({ urls: [ "*://*/*" ] },
+    (d, c)=>{
+      if(d.responseHeaders['X-Frame-Options']){
+        delete d.responseHeaders['X-Frame-Options'];
+      } else if(d.responseHeaders['x-frame-options']) {
+        delete d.responseHeaders['x-frame-options'];
+      }
+
+      c({cancel: false, responseHeaders: d.responseHeaders});
+    }
+  );  
 
   // and load the index.html of the app.
-  //mainWindow.loadFile('index.html')
-  mainWindow.loadURL('https://flausch.atlassian.net/')
+  mainWindow.loadFile('index.html')
+  //mainWindow.loadURL('https://flausch.atlassian.net/')
   /*
   const view = new BrowserView()
   mainWindow.setBrowserView(view)

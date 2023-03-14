@@ -1,28 +1,39 @@
+<!--
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
-    <style>
-      webview {
-        width: 100%;
-        height: 100%;
-      }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <iframe src="https://flausch.atlassian.net/" style="width: 100vw; height: 100vh"></iframe>
+  </body>
+</html>
+-->
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-    <div id="views">
-      <webview id="view" class="page" src="https://www.whatismybrowser.com/de/detect/what-is-my-user-agent/" ></webview>
-    </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/@picocss/pico/css/pico.min.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Hello, world!</h1>
+      <nav>
+        <ul>
+          <li><strong>Brand</strong></li>
+        </ul>
+        <ul>
+          <li><a href="#">Link</a></li>
+          <li><a href="https://flausch.atlassian.net/">Link</a></li>
+          <li><a href="#" role="button">Button</a></li>
+        </ul>
+      </nav>
+    </main>
   </body>
 </html>

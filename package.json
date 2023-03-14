@@ -18,5 +18,8 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^23.1.0"
+  },
+  "dependencies": {
+    "@picocss/pico": "^1.5.7"
   }
 }
