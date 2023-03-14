@@ -14,12 +14,15 @@ function createWindow () {
 
   // and load the index.html of the app.
   //mainWindow.loadFile('index.html')
+  mainWindow.loadURL('https://flausch.atlassian.net/')
+  /*
   const view = new BrowserView()
   mainWindow.setBrowserView(view)
   view.setBounds({x: 0, y: 0, width: 800, height:600 })
   view.webContents.loadURL('https://electronjs.org')
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
+  */
 }
 
 // This method will be called when Electron has finished
